@@ -1,0 +1,34 @@
+<amexio-card [footer]="true" [header]="true" [show]="true" [header-align]="'left'" [footer-align]="'right'">
+    <amexio-header>
+        Greetings Demo
+    </amexio-header>
+    <amexio-body>
+        <amexio-row>
+            <amexio-column size="6">
+                <amexio-text-input [field-label]="'User Name'" [(ngModel)]="user.name" name="user.name" [allow-blank]="true" [min-length]="0" [max-length]="20" [font-size]="10" [has-label]="true">
+                </amexio-text-input>
+            </amexio-column>
+            <amexio-column size="6">
+                <amexio-text-input [field-label]="'Greeting Message'" [(ngModel)]="user.greetingMsg" name="user.greetingMsg" [allow-blank]="true" [min-length]="0" [max-length]="20" [font-size]="10" [has-label]="true">
+                </amexio-text-input>
+            </amexio-column>
+        </amexio-row>
+
+
+    </amexio-body>
+
+    <amexio-action>
+        <amexio-button [label]="'Hello'" [type]="'theme-color'" [tooltip]="'button'" [size]="'default'" [form-bind]="'hello'" (onClick)="onClick_hello($event)">
+        </amexio-button>
+
+    </amexio-action>
+</amexio-card>
+<amexio-notification [data]="successMsgData" [vertical-position]="'top'" [horizontal-position]="'right'" [close-on-escape]="true" [background-color]="'green'" [auto-dismiss-msg]="true" [auto-dismiss-msg-interval]="4000">
+    <ng-template #amexioNotificationTemplates let-row="row">
+        <amexio-box>
+            <amexio-image [icon-class]="'fa fa-check'">
+            </amexio-image> &nbsp;&nbsp;
+            <amexio-label size="small-bold" font-color="black">{{row}}</amexio-label>
+        </amexio-box>
+    </ng-template>
+</amexio-notification>
